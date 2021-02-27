@@ -24,13 +24,3 @@ body {
   width: 20%;
   height: auto;
 }
-
-.villager-collection {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.villager-card {
-  flex-basis: 25%;
-}

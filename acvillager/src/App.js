@@ -2,13 +2,20 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import AppHeader from './components/Header';
 import VillagersCollection from './components/villagers/VillagersCollection'
+import Pagination from './components/Pagination'
 import './App.css';
 
 function App() {
 
   const [villagers, setVillagers] = useState([])
+  const [loading, setLoading] = useState(false)
+
+  //pagination
+  const [currentPage, setCurrentPage] = useState(1)
+  const [villagersPerPage] = useState(20)
 
   useEffect(() => { 
+    setLoading(true);
 
     // required headers for using Nookpedia API
     const config = { headers: 
@@ -18,18 +25,40 @@ function App() {
 
     axios
       .get(`https://api.nookipedia.com/villagers`, config)
-      .then(res => setVillagers(res.data))
+      .then(res => 
+        setVillagers(res.data),
+        setLoading(false)
+      )
       .catch(error => console.log(error));
 
-
   }, [])
+
+  // console.log("villagers", villagers.length)
+  // console.log("villagers per page", villagersPerPage)    
+
+
+  //get villagers for pagination
+  const indexLastVillager = currentPage * villagersPerPage;
+  const indexFirstVillager = indexLastVillager - villagersPerPage;
+  const currentVillagers = villagers.slice(indexFirstVillager, indexLastVillager) //slices out num of post we want from
+
+  //change page
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber)
+  }
 
   return (
     <div className="App">
         <AppHeader />
-        <VillagersCollection villagers={villagers} />
+        <VillagersCollection villagers={currentVillagers} loading={loading}/>
+        <Pagination 
+          villagersPerPage={villagersPerPage} 
+          totalVillagers={villagers.length}
+          paginate={paginate}
+        />
+
     </div>
   );
-}
+};
 
 export default App;
