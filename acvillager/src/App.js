@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import AppHeader from './components/Header';
+import VillagersCollection from './components/villagers/VillagersCollection'
 import './App.css';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
   return (
     <div className="App">
         <AppHeader />
+        <VillagersCollection villagers={villagers} />
     </div>
   );
 }

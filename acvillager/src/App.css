@@ -12,6 +12,7 @@ body {
 
 .App {
   display: flex;
+  flex-direction: column;
   text-align: center;
 }
 
@@ -22,4 +23,14 @@ body {
 .App-header img{
   width: 20%;
   height: auto;
+}
+
+.villager-collection {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.villager-card {
+  flex-basis: 25%;
 }
