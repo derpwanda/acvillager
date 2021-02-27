@@ -1,12 +1,23 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  display: flex;
   background-color: darkolivegreen;
+  color: #fff;
+  font-family: 'Spectral', serif;
 }
 
 .App {
   display: flex;
   text-align: center;
 }
+
+/* .App-header {
+
+} */
 
 .App-header img{
   width: 20%;
