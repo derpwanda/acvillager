@@ -1,14 +1,19 @@
 import React from 'react'
 import SingleVillagerCard from './SingleVillagerCard'
 
-function VillagersCollection({villagers}) {
+function VillagersCollection({villagers, loading}) {
+
+    if (loading) {
+        return <h3>loading...</h3>
+    }
+    
     return (
-        <div className="villager-collection">
-            {villagers.map( (villager) => (
-                <SingleVillagerCard key={villager.id} villager={villager}>
+        <section>
+            {villagers.map(villager => (
+                <SingleVillagerCard key={villager.index} villager={villager}>
                 </SingleVillagerCard>
             ))}
-        </div>
+        </section>
     )
 }
 
