@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import AppHeader from './components/Header';
-import VillagersCollection from './components/villagers/VillagersCollection'
-import Pagination from './components/Pagination'
+import AppHeader from './components/ui/Header/Header';
+import VillagersCollection from './components/villagers/villagerCollection/VillagersCollection'
+import Pagination from './components/ui/Pagination/Pagination'
 import './App.css';
 
 function App() {
@@ -12,20 +12,23 @@ function App() {
 
   //pagination
   const [currentPage, setCurrentPage] = useState(1)
-  const [villagersPerPage] = useState(20)
+  const [villagersPerPage] = useState(50)
 
-  useEffect(() => { 
+  useEffect(() => {
     setLoading(true);
 
     // required headers for using Nookpedia API
-    const config = { headers: 
-      {'X-API-KEY': `${process.env.REACT_APP_NOOKAPIKEY}`,
-      'Accept-Version': '1.0.0'}
+    const config = {
+      headers:
+      {
+        'X-API-KEY': `${process.env.REACT_APP_NOOKAPIKEY}`,
+        'Accept-Version': '1.0.0'
+      }
     }
 
     axios
       .get(`https://api.nookipedia.com/villagers`, config)
-      .then(res => 
+      .then(res =>
         setVillagers(res.data),
         setLoading(false)
       )
@@ -49,13 +52,13 @@ function App() {
 
   return (
     <div className="App">
-        <AppHeader />
-        <VillagersCollection villagers={currentVillagers} loading={loading}/>
-        <Pagination 
-          villagersPerPage={villagersPerPage} 
-          totalVillagers={villagers.length}
-          paginate={paginate}
-        />
+      <AppHeader />
+      <VillagersCollection villagers={currentVillagers} loading={loading} />
+      <Pagination
+        villagersPerPage={villagersPerPage}
+        totalVillagers={villagers.length}
+        paginate={paginate}
+      />
 
     </div>
   );
