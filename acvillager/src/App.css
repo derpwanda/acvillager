@@ -1,5 +1,4 @@
 * {
-  /*universal selector */
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -11,8 +10,45 @@ body {
   font-family: "Spectral", serif;
 }
 
-.App {
-  display: flex;
-  flex-direction: column;
+.app {
+  /* display: flex; */
+  /* flex-direction: column; */
+  align-items: center;
   text-align: center;
+}
+
+.app-header img {
+  width: 20%;
+  height: auto;
+}
+
+/* VILLAGER CSS */
+.villager-list {
+  column-count: 4;
+}
+
+/* PAGINATION CSS */
+.page-table {
+  display: inline-block;
+  float: none;
+  margin-top: 10px;
+}
+
+.page-list {
+  list-style-type: none;
+  display: flex;
+}
+
+.page {
+  font-size: 20px;
+  margin: 3px;
+  padding: 3px;
+}
+
+.page a:visited {
+  color: white;
+}
+
+.page a:link {
+  color: black;
 }
