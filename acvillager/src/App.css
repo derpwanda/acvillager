@@ -38,6 +38,11 @@ body {
   position: relative;
 }
 
+.single-villager img {
+  width: 40%;
+  height: auto;
+}
+
 /* PAGINATION CSS */
 .page-table {
   display: inline-block;

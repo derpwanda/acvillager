@@ -36,9 +36,6 @@ function App() {
 
   }, [])
 
-  // console.log("villagers", villagers.length)
-  // console.log("villagers per page", villagersPerPage)    
-
 
   //get villagers for pagination
   const indexLastVillager = currentPage * villagersPerPage;
