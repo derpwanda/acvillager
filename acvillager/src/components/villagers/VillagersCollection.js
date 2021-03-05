@@ -10,7 +10,7 @@ function VillagersCollection({ villagers, loading }) {
     return (
         <section className="villager-list">
             {villagers.map(villager => (
-                <SingleVillagerCard key={villager.index} villager={villager}>
+                <SingleVillagerCard key={villager.name} villager={villager}>
                 </SingleVillagerCard>
             ))}
         </section>

@@ -24,14 +24,30 @@ body {
 
 /* VILLAGER CSS */
 .villager-list {
-  column-count: 4;
+  /* column-count: 4; */
+  margin-top: 20px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.single-villager {
+  width: 10%;
+  padding-bottom: 10%;
+  position: relative;
+}
+
+.single-villager img {
+  width: 40%;
+  height: auto;
 }
 
 /* PAGINATION CSS */
 .page-table {
   display: inline-block;
   float: none;
-  margin-top: 10px;
+  /* margin-top: 10px; */
 }
 
 .page-list {
