@@ -50,7 +50,7 @@ function App() {
   return (
     <div className="app">
       <AppHeader />
-      <VillagersCollection villagers={currentVillagers} loading={loading} />
+      <VillagersCollection pureVillagerArray={villagers} villagers={currentVillagers} loading={loading} />
       <Pagination
         villagersPerPage={villagersPerPage}
         totalVillagers={villagers.length}
