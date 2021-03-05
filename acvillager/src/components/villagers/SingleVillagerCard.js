@@ -2,7 +2,7 @@ import React from 'react'
 
 function SingleVillagerCard({ villager }) {
     return (
-        <div>
+        <div className="single-villager">
             {villager.name}
         </div>
     )

@@ -1,5 +1,5 @@
 import React from 'react'
-import SingleVillagerCard from '../singleVillager/SingleVillagerCard'
+import SingleVillagerCard from './SingleVillagerCard'
 
 function VillagersCollection({ villagers, loading }) {
 
@@ -8,7 +8,7 @@ function VillagersCollection({ villagers, loading }) {
     }
 
     return (
-        <section>
+        <section className="villager-list">
             {villagers.map(villager => (
                 <SingleVillagerCard key={villager.index} villager={villager}>
                 </SingleVillagerCard>

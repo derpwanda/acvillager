@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import AppHeader from './components/ui/Header/Header';
-import VillagersCollection from './components/villagers/villagerCollection/VillagersCollection'
-import Pagination from './components/ui/Pagination/Pagination'
+import AppHeader from './components/ui/Header';
+import VillagersCollection from './components/villagers/VillagersCollection'
+import Pagination from './components/ui/Pagination'
 import './App.css';
 
 function App() {
@@ -51,7 +51,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="app">
       <AppHeader />
       <VillagersCollection villagers={currentVillagers} loading={loading} />
       <Pagination
