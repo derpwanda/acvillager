@@ -1,5 +1,4 @@
 import React from 'react'
-import './Pagination'
 
 const Pagination = ({ villagersPerPage, totalVillagers, paginate }) => {
     const pageNumbers = []

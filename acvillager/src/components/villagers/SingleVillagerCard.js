@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SingleVillagerCard({ villager }) {
+const SingleVillagerCard = ({ villager }) => {
     // "https://dodo.ac/np/images/8/85/June_NH.png"
     // "https://dodo.ac/np/images/thumb/8/85/June_NH.png/40px-June_NH.png"
 
@@ -10,7 +10,7 @@ function SingleVillagerCard({ villager }) {
     return (
         <div className="single-villager">
             <img src={characterURL} alt='villager'></img>
-            <div>{villager.name}</div>
+            <a href={villager.url}><div>{villager.name}</div></a>
         </div>
     )
 }
